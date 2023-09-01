@@ -14,7 +14,7 @@ beforeAll(() => server.listen());
 afterEach(() => server.restoreHandlers());
 afterAll(() => server.close());
 
-test("Fetch name", async () => {
+test("ApiFetchComponent displays the fetched name correctly", async () => {
   render(<ApiFetchComponent />);
 
   const out = await screen.findByRole("contentinfo");
