@@ -1,11 +1,10 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Provider } from "react-redux";
-
 import { ReduxCounter } from "./ReduxCounter";
+import { Provider } from "react-redux";
 import { createStore } from "./store";
 
-test("increment", () => {
+test("ReduxCounter increments count on button click", () => {
   render(
     <Provider store={createStore()}>
       <ReduxCounter />
@@ -15,13 +14,13 @@ test("increment", () => {
   const counter = screen.getByRole("contentinfo");
   expect(counter).toHaveTextContent("0");
 
-  const addButton = screen.getByText(/Increment/i);
-  fireEvent.click(addButton);
+  const incrementBtn = screen.getByText(/Increment/i);
+  fireEvent.click(incrementBtn);
 
   expect(counter).toHaveTextContent("1");
 });
 
-test("increment again", () => {
+test("ReduxCounter maintains count state between multiple increments", () => {
   render(
     <Provider store={createStore()}>
       <ReduxCounter />
@@ -31,8 +30,8 @@ test("increment again", () => {
   const counter = screen.getByRole("contentinfo");
   expect(counter).toHaveTextContent("0");
 
-  const addButton = screen.getByText(/Increment/i);
-  fireEvent.click(addButton);
+  const incrementBtn = screen.getByText(/Increment/i);
+  fireEvent.click(incrementBtn);
 
   expect(counter).toHaveTextContent("1");
 });

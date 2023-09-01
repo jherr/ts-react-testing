@@ -1,10 +1,12 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { Person } from "./Person";
+import { render, screen } from '@testing-library/react';
+import { Person } from './Person';
+import React from 'react';
 
-test("renders a name", () => {
-  render(<Person name="Jack" />);
-  const divElement = screen.getByRole("contentinfo");
-  expect(divElement).toHaveTextContent("Name is Jack");
-  expect(divElement).toHaveAttribute("role", "contentinfo");
+test('it renders a person\'s name with the expected content and role', () => {
+  render(<Person name={"ullas"} />);
+  // const linkElement = screen.getByText(/Name ullas/i);
+  // expect(linkElement).toBeInTheDocument();
+  const divElm = screen.getByRole("contentinfo");
+  expect(divElm).toHaveTextContent("Name ullas");
+  expect(divElm).toHaveAttribute("role","contentinfo");
 });

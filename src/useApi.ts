@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-export function useAPI() {
-  const [data, setData] = useState<{
-    name: string;
-  }>();
-
+export const useApi = () => {
+  const [data, setData] = useState<{ name: string }>();
   useEffect(() => {
     let isMounted = true;
     fetch("/api")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         if (isMounted) {
           setData(data);
@@ -18,6 +15,5 @@ export function useAPI() {
       isMounted = false;
     };
   }, []);
-
-  return data;
-}
+  return data
+};

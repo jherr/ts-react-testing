@@ -1,11 +1,11 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ButtonWrapper } from "./ButtonWrapper";
+import React from "react";
 
-test("handles onClick", () => {
+test("it triggers the onClick handler when clicked", () => {
   const onClick = jest.fn();
-  render(<ButtonWrapper onClick={onClick} title="Add Item" />);
-  const buttonElement = screen.getByText("Add Item");
-  fireEvent.click(buttonElement);
+  render(<ButtonWrapper onClick={onClick} title={"ClickMe"} />);
+  const buttonElm = screen.getByText("ClickMe");
+  fireEvent.click(buttonElm);
   expect(onClick).toHaveBeenCalledTimes(1);
 });
