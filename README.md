@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# React Component Testing Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides examples and best practices for testing React components using various testing techniques and libraries.
 
-## Available Scripts
+## Table of Contents
+- [Basic Component Testing](#basic-component-testing)
+- [Multiple Element Testing](#multiple-element-testing)
+- [Event Handler Testing](#event-handler-testing)
+- [Testing State Hooks](#testing-state-hooks)
+- [Testing Async Hooks](#testing-async-hooks)
+- [Testing Simple Custom Hooks](#testing-simple-custom-hooks)
+- [Testing Async Custom Hooks](#testing-async-custom-hooks)
+- [Testing Redux Components](#testing-redux-components)
+- [Testing Zustand Components](#testing-zustand-components)
 
-In the project directory, you can run:
+## Basic Component Testing
+- Demonstrates how to write basic tests for React components.
+- Includes examples of rendering components and making assertions.
 
-### `yarn start`
+## Multiple Element Testing
+- Explains how to test components with multiple elements.
+- Shows how to target specific elements and verify their properties.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Event Handler Testing
+- Covers testing event handlers in React components.
+- Provides examples of triggering events and testing their effects.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Testing State Hooks
+- Demonstrates testing components that use React state hooks.
+- Includes examples of asserting the state changes.
 
-### `yarn test`
+## Testing Async Hooks
+- Shows how to test components using asynchronous hooks.
+- Includes testing async side effects and responses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Testing Simple Custom Hooks
+- Explains how to test custom hooks that manage simple state.
+- Includes testing hook functionality in isolation.
 
-### `yarn build`
+## Testing Async Custom Hooks
+- Demonstrates testing custom hooks with asynchronous behavior.
+- Shows how to mock async dependencies and test hook behavior.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Testing Redux Components
+- Covers testing components integrated with Redux.
+- Demonstrates mocking Redux store and testing dispatch actions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testing Zustand Components
+- Explains testing components using Zustand state management.
+- Provides examples of creating a Zustand store and testing components that use it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+Feel free to explore the individual sections for detailed examples and explanations.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For each section, there are corresponding test files in the `src` directory to demonstrate the testing techniques.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Run tests using `npm test` or `yarn test`.
+- Run tests with verbose output:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+npm test -- --verbose
+```
+- Run tests with coverage output:
 
-## Learn More
+```sh
+npm test -- --coverage
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Happy Testing!

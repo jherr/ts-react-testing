@@ -1,13 +1,13 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Counter } from "./Counter";
+import React from "react";
 
-test("handles onClick", () => {
+test("it increments the count when 'Add' button is clicked", () => {
   render(<Counter />);
 
-  const divElement = screen.getByRole("contentinfo");
-  const buttonElement = screen.getByText("Add One");
-  fireEvent.click(buttonElement);
+  const buttonElm = screen.getByText("Add");
+  const divElm = screen.getByRole("contentinfo");
+  fireEvent.click(buttonElm);
 
-  expect(divElement).toHaveTextContent("Count is 1");
+  expect(divElm).toHaveTextContent("count is 1");
 });

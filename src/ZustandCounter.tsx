@@ -7,7 +7,9 @@ export function ZustandCounter() {
   return (
     <div>
       <div>
-        <button aria-label="Increment value" onClick={increment}>
+        <button 
+        aria-label="Increment value"
+        onClick={increment}>
           Increment
         </button>
         <span role="contentinfo">{count}</span>
